@@ -1,0 +1,146 @@
+
+<app-header></app-header>
+
+<html lang="en">
+<body>
+  
+    <div class="page-title-wrap primary-bg" style="height:50px;">
+        <div class="container">
+            <div class="col">
+                  
+                    <div class="page-title-content text-center">
+                        <h1 class="h2">Sign Up</h1>
+                    </div>
+                    
+                </div>
+        </div>
+    </div>
+    
+    <section class="pt-90 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    
+                    <div class="contact-form contact-page-form parsley-validate">
+
+
+
+                        <div class="container-fluid" >
+                            <form class="newForm" #newForm="ngForm" (ngSubmit)= "onSubmit()"  >
+                            
+                     <div class="col-md-6">        
+                      <div class="form-group">
+                        <input type="text" required #name="ngModel" class="form-control" name="name" placeholder="username" [(ngModel)]="userModel.name" >
+                        
+                      </div>
+                     </div>
+            
+                     <div class="col-md-6">  
+                      <div class="form-group">
+                        <input type="email" required #email="ngModel" class="form-control" name="email" placeholder="email" [(ngModel)]="userModel.email">
+                    </div>
+                     </div> 
+            
+                     <div class="col-md-6">  
+                      <div class="form-group">
+                      <input type="password" required #password="ngModel"  class="form-control" name="password" placeholder="password" [(ngModel)]="userModel.password"> 
+                    </div>
+                     </div>
+            
+
+                     <div class="col-md-6">  
+                      <div class="form-group">
+                        <input type="number" #mobile="ngModel"  class="form-control" name="mobile" placeholder="mobile" [(ngModel)]="userModel.mobile">
+                    </div>
+                    </div>
+
+                    <div class="col-md-6">  
+                            <div class="form-group">
+                              <input type="text" #mobile="ngModel"  class="form-control" name="city" placeholder="City" [(ngModel)]="userModel.city">
+                          </div>
+                          </div>
+            
+
+                    <div class="col-md-6 col-md-offset-3">
+                        <button type="submit"  class="btn btn-primary center-block">submit</button>
+                    </div>
+
+                   
+
+                    </form>
+                  </div>
+
+
+
+
+                     
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+  
+    <footer class="footer secondery-bg">
+        <div class="footer-top pt-110 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                      
+                        <div class="footer-widget">
+                            <div class="widget-title">
+                                <h3>Address</h3>
+                            </div>
+                            <p>Sample Address, Indore</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      
+                        <div class="footer-widget text-center">
+                            <div class="widget-title">
+                                <h3>Follow</h3>
+                            </div>
+                            <div class="footer-social-area">
+                                <ul class="social-list mb--0 list-unstyled">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        
+                        <div class="footer-widget text-right">
+                            <div class="widget-title">
+                                <h3>Contact</h3>
+                            </div>
+                            <div class="footer-contact-info">
+                                <a href="">+91-98765 43210</a>
+                                <a href="">info@bookthewater.com</a>
+                            </div>
+                        </div>>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="footer-bottom-text">
+                <p>© Copyright 2019 by <a href="#">BooktheWater.com</a></p>
+            </div>
+        </div>
+    </footer>
+ 
+
+    
+    <div class="back-to-top">
+        <a href="#"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    </body>
+    
+</html>

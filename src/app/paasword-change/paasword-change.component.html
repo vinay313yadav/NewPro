@@ -1,0 +1,16 @@
+<div class="container-fluid" >
+    <form class="newForm" #newForm="ngForm" (ngSubmit)= "onSubmit()"  >
+    
+            <div class="col-md-6">        
+                    <div class="form-group">
+                      <label>Chnage Your Password</label>
+                      <input type="number" required #password="ngModel" class="form-control" name="password" placeholder="New_Password" [(ngModel)]="userModel.password">
+                    </div>
+                   </div>
+          
+<div class="submite-btn text-center">
+<button type="submit"  class="btn btn-primary center-block" >submit</button>
+</div>
+
+</form>
+</div>

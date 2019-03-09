@@ -1,0 +1,68 @@
+
+   <!-- <div class="contact-form contact-page-form parsley-validate">
+<div class="container-fluid" >
+  <form class="newForm" #newForm="ngForm" (ngSubmit)= "onSubmit()"  >
+  
+          <div class="col-md-6">        
+                  <div class="form-group">
+                    <input type="text" required #promocode="ngModel" class="form-control" name="promocode" placeholder="promocode" [(ngModel)]="userModel.promocode">
+                  </div>
+                 </div>
+
+<div class="submite-btn text-center">
+<button type="submit"  class="btn btn-primary center-block" >submit</button>
+</div>
+</form>
+</div>
+</div> -->
+
+<div>
+  <table class="table table-striped">
+    <tr>
+      <th>No</th>
+      <th>Image</th>
+      <th> Name</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Discount in %</th>
+      <th>Quentity</th>
+     
+      
+      <th>Role</th> <th colspan="2">Actions</th>
+    </tr>
+
+
+    <tr *ngFor="let u of table, let i = index;">
+     
+      <td>{{i+1}}</td>
+      <td>
+          <img src="https://sheltered-woodland-33544.herokuapp.com/product_image/{{u.image}}" height="100px" width="100px">
+       </td>
+      <td>{{u.name}}</td>
+      <td>{{u.price}}</td>
+      <td>{{u.category}}</td>
+      <td>{{u.discount}}</td>
+      <div>{{u.Quentity}}</div>
+      
+      <td>
+        <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="addItem(u, '+')" ><i class="fa fa-plus-square" aria-hidden="true"></i></button>
+
+        <button type="button" style="color: whitesmoke;" class="btn btn-info" (click)="addItem(u, '-')" ><i class="fa fa-minus-square" aria-hidden="true"></i></button>
+      </td>
+      
+      <td>
+          <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="onclear(u._id)" >Clear</button>
+        </td>
+    </tr>
+   
+  </table>
+  <h3>total amount: Rs.{{table[0].total}} </h3>
+      
+  <div>
+      <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="onEditUser(u._id)" >submit</button>
+  </div>
+
+
+
+  
+</div>
