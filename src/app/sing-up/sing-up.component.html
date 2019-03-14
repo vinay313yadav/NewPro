@@ -1,22 +1,114 @@
 
-<app-header></app-header>
+
 
 <html lang="en">
 <body>
   
-    <div class="page-title-wrap primary-bg" style="height:50px;">
-        <div class="container">
-            <div class="col">
-                  
-                    <div class="page-title-content text-center">
-                        <h1 class="h2">Sign Up</h1>
-                    </div>
-                    
-                </div>
-        </div>
-    </div>
+   
+
+
+        <div class="banner_area1 clearfix ankit_bcg">
+                <div class="slider_overlay_area slider_height">
+                    <div class="container slider_height">
+                        <div class="row slider_height">
+                            <div class="col-md-5 offset-md-7 slider_height">
+                                <div class="banner-delivery-form">
+                                    <div class="form-header text-center">
+                                        <h2>SingUP-Page</h2>
+                                    </div>
+                                    <div class="container-fluid" >
+                                        <form class="newForm" #newForm="ngForm"  (ngSubmit)= "onSubmit()"  >
+                                            <div class="row banner-form">
     
-    <section class="pt-90 pb-120">
+                                                    <div class="col-lg-12">        
+                                                            <div class="form-group">
+                                                              <input type="text" required #name="ngModel" class="form-control" name="name" placeholder="username" [(ngModel)]="userModel.name" >
+                                                              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                                                                      <div *ngIf="name.errors.required">
+                                                                        name is required.
+                                                                     </div>
+                                                                     </div>
+                                                            </div>
+                                                           </div>
+    
+                                                           <div class="col-lg-12">  
+                                                                <div class="form-group">
+                                                                  <input type="email" required #email="ngModel" class="form-control" name="email" placeholder="email" [(ngModel)]="userModel.email">
+                                                                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                                                                          <div *ngIf="email.errors.required">
+                                                                            Email is required.
+                                                                         </div>
+                                                                         </div>
+                                                              </div>
+                                                               </div> 
+
+                                                               <div class="col-lg-12">  
+                                                                    <div class="form-group">
+                                                                    <input type="password" required #password="ngModel"  class="form-control" name="password" placeholder="password" [(ngModel)]="userModel.password"> 
+                                                                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                                                                          <div *ngIf="password.errors.required">
+                                                                            Password is required.
+                                                                         </div>
+                                                                         </div>
+                                                                  </div>
+                                                                   </div>
+
+
+                                                                   <div class="col-lg-12">  
+                                                                        <div class="form-group">
+                                                                          <input type="number" required #mobile="ngModel"  class="form-control" name="mobile" placeholder="mobile" [(ngModel)]="userModel.mobile">
+                                                                          <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+                                                                                  <div *ngIf="mobile.errors.required">
+                                                                                    Mobile Number is required.
+                                                                                 </div>
+                                                                                 </div>
+                                                                      </div>
+                                                                      </div>
+                                                  
+                                                                      <div class="col-lg-12">  
+                                                                              <div class="form-group">
+                                                                                <input type="text" required #city="ngModel"  class="form-control" name="city" placeholder="City" [(ngModel)]="userModel.city">
+                                                                                <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+                                                                                      <div *ngIf="city.errors.required">
+                                                                                        City Name is required.
+                                                                                     </div>
+                                                                                     </div>
+                                                                            </div>
+                                                                            </div>
+
+
+
+                                <div class="submite-btn text-center">
+                                <button type="submit"  class="btn btn-primary center-block" >submit</button>
+                                </div>
+                                
+                            </div>
+                                </form>
+                              </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="camera_wrap " id="banner_slider1">
+                    <div class="hero_slider1" data-src="./src/assets/img/banner/h3-banner1.jpg">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7">
+                                
+                                    <div class="banner-text-wrap">
+                                        <span class="schoolbell fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .0s;-webkit-animation-delay: .0s;">Enjoy great tasting bottled water</span>
+                                        <h1 class="text-white fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .2s;-webkit-animation-delay: .3s;">We deliver the<br> best pure mineral water</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- <section class="pt-90 pb-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
@@ -31,19 +123,33 @@
                      <div class="col-md-6">        
                       <div class="form-group">
                         <input type="text" required #name="ngModel" class="form-control" name="name" placeholder="username" [(ngModel)]="userModel.name" >
-                        
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                                <div *ngIf="name.errors.required">
+                                  name is required.
+                               </div>
+                               </div>
                       </div>
                      </div>
             
                      <div class="col-md-6">  
                       <div class="form-group">
                         <input type="email" required #email="ngModel" class="form-control" name="email" placeholder="email" [(ngModel)]="userModel.email">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                                <div *ngIf="email.errors.required">
+                                  Email is required.
+                               </div>
+                               </div>
                     </div>
                      </div> 
             
                      <div class="col-md-6">  
                       <div class="form-group">
                       <input type="password" required #password="ngModel"  class="form-control" name="password" placeholder="password" [(ngModel)]="userModel.password"> 
+                      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                            <div *ngIf="password.errors.required">
+                              Password is required.
+                           </div>
+                           </div>
                     </div>
                      </div>
             
@@ -51,36 +157,44 @@
                      <div class="col-md-6">  
                       <div class="form-group">
                         <input type="number" #mobile="ngModel"  class="form-control" name="mobile" placeholder="mobile" [(ngModel)]="userModel.mobile">
+                        <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+                                <div *ngIf="mobile.errors.required">
+                                  Mobile Number is required.
+                               </div>
+                               </div>
                     </div>
                     </div>
 
                     <div class="col-md-6">  
                             <div class="form-group">
-                              <input type="text" #mobile="ngModel"  class="form-control" name="city" placeholder="City" [(ngModel)]="userModel.city">
+                              <input type="text" #city="ngModel"  class="form-control" name="city" placeholder="City" [(ngModel)]="userModel.city">
+                              <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+                                    <div *ngIf="city.errors.required">
+                                      City Number is required.
+                                   </div>
+                                   </div>
                           </div>
                           </div>
             
-
                     <div class="col-md-6 col-md-offset-3">
                         <button type="submit"  class="btn btn-primary center-block">submit</button>
                     </div>
-
-                   
-
                     </form>
                   </div>
-
-
-
-
-                     
-
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> -->
+    <!-- <div class="page-title-wrap primary-bg" style="height:20px;">
+            <div class="container">
+                <div class="col">
+                        <div class="page-title-content text-center">
+                        </div>
+                        
+                    </div>
+            </div>
+        </div> -->
     
   
     <footer class="footer secondery-bg">

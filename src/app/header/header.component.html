@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header row" style="background-color: aliceblue;">
   <!-- Start Header Navbar-->
   <div class="main-header">
       <div class="main-menu-wrap">
@@ -19,36 +19,19 @@
                           <div class="menu-wraper">
                               <nav>
                               
-                                  <div class="header-menu dosis">
-                                      <ul>
+                                  <div class=" nav header-menu dosis">
+                                      <ul class="navbar-nav">
                                           <li> <a class="nav-link" routerLink="/index">Home <img src="assets/img/line2.png" alt=""></a>
                                           </li>
-                                          <li><a href="about.component.html">About<img src="assets/img/line2.png" alt=""></a></li>
-                                          <li class="active"><a href="#">Service<img src="assets/img/line2.png" alt=""></a>
+                                          <li><a routerLink="/about">About<img src="assets/img/line2.png" alt=""></a></li>
+                                          <li class="active"><a >Service<img src="assets/img/line2.png" alt=""></a>
                                               <ul>
-                                                  <li class="active"><a href="service.component.html">Service</a></li>
-                                                  <li><a href="servicedetails.component.html">Service Details</a></li>
+                                                  <li class="active"><a routerLink="/service">Service</a></li>
+                                                  <li><a routerLink="/servicedetails">Service Details</a></li>
                                               </ul>
                                           </li>
-                                          <li><a href="#">Contact<img src="assets/img/line2.png" alt=""></a></li>
+                                          <li><a routerLink='/Contact' >Contact<img src="assets/img/line2.png" alt=""></a></li>
                                       </ul>
-                                      <!-- <form class="newForm" #newForm="ngForm" (ngSubmit)= "ngSubmit()"  >
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <button type="submit"  class="btn btn-primary center-block">Resend_OTP</button>
-                                            </div> 
-                                    </form> -->
-                                  
-                                   
-                                            <div class="container-fluid" >
-                                                
-                                            <form class="newForm" #newForm="ngForm" (ngSubmit)= "OnSubmit()"  >
-                                                    <div class="col-md-6 col-md-offset-3">
-                                                        <button type="submit"  class="btn btn-primary center-block">Profilr</button>
-                                                        </div> 
-                                                </form>
-                                            </div>
-                                    
-
                                   </div>
                                   <!--/. End of Header-menu -->
                               </nav>
@@ -61,9 +44,20 @@
                   <!--/.col-->
                   <div class="col-lg-3 col-md-4 col-sm-4">
                       <div class="urgent-call text-right">
-                          <i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i>
+                          <!--Type your button logic here-->
+                          <a routerLink="/cartdata"><i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i></a>
+                          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                          <!--Type your button logic here-->
+                         <a routerLink="/editProfile"> <i class="fa fa-2x fa-user" aria-hidden="true"></i></a>
+                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                         <a (click)="logout()"><i class="fa fa-2x fa-sign-out" aria-hidden="true"></i></a>
+                      
+                       
+                    
                       </div>
                   </div>
+
+                  
                   <!--/.col-->
               </div>
               <!--/.row-->
@@ -71,12 +65,12 @@
           <!--/.container-->
       </div>
 
-      <div class="container-fluid" >                                     
+      <!--<div class="container-fluid" >                                     
         <form class="newForm" #newForm="ngForm" (ngSubmit)= "ngSubmit()"  >
                 <div class="col-md-6 col-md-offset-3">
                     <button type="submit"  class="btn btn-primary center-block">AddCart</button>
                     </div> 
             </form>
-        </div>
+        </div>-->
   </div>
 </header>

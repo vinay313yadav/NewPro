@@ -1,0 +1,93 @@
+<app-header></app-header>
+
+ <div class="page-title-wrap primary-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- page title content -->
+                <div class="page-title-content text-center">
+                    <ul class="mb-0 list-unstyle nav">
+                        <li><a routerLink="/index">Home</a></li>
+                        <li><a routerLink="/servicedetails">services</a></li>
+                    </ul>
+                    <h1 class="h2">Order Your Bottels</h1>
+                </div><!--/.End of page title content -->
+            </div><!-- /.col-->
+        </div><!-- /.row-->
+    </div><!-- /.container-->
+</div><!-- End of page title -->
+
+
+
+   <div >
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4" *ngFor="let u of table">
+          <div class="table">
+            <div class="single-bottle-inner text-center">
+                
+                <div class="bottle-image">
+                    <img src="assets/img/icons/water-gallon.svg" alt="" class="svg">
+                </div>
+                <div class="single-bottle-text">
+                    <h6>Product:{{u.name}}</h6>
+                    <h6>price:{{u.price}}</h6>
+                    <h6>category:{{u.category}}</h6>
+                    <h6>discount:{{u.discount}}</h6>
+                    <div>
+                     <button type="button"  class="btn btn-danger" (click)="onAddCart(u)" >Add_Cart</button>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        </div>
+        <!-- <div class="col-md-6 col-lg-4" >
+                <div class="table">
+                  <div class="single-bottle-inner text-center">
+                      
+                      <div class="bottle-image">
+                          <img src="assets/img/icons/water-gallon.svg" alt="" class="svg">
+                      </div>
+                      <div class="single-bottle-text">
+                          <h4>{{u.name}}</h4>
+                          <h5>{{u.price}}</h5>
+                          <h5>{{u.category}}</h5>
+                          <h5>{{u.discount}}</h5>
+                          <div>
+                           <button type="button"  class="btn btn-danger" (click)="onAddCart(u)" >Add_Cart</button>
+                          </div>
+                      </div>
+                  
+                  </div>
+              </div>
+              </div> -->
+              <!-- <div class="col-md-6 col-lg-4" >
+                    <div class="table">
+                      <div class="single-bottle-inner text-center">
+                          
+                          <div class="bottle-image">
+                              <img src="assets/img/icons/water-gallon.svg" alt="" class="svg">
+                          </div>
+                          <div class="single-bottle-text">
+                              <h4>{{u.name}}</h4>
+                              <h5>{{u.price}}</h5>
+                              <h5>{{u.category}}</h5>
+                              <h5>{{u.discount}}</h5>
+                              <div>
+                               <button type="button"  class="btn btn-danger" (click)="onAddCart(u)" >Add_Cart</button>
+                              </div>
+                          </div>
+                      
+                      </div>
+                  </div>
+                  </div> -->
+
+                  <!-- Bottom Button Section-->
+        <div class="col-12">
+            <div class="deliver-btn text-center">
+                    <a type="button" class="btn btn-warning"  routerLink="/service">View all Bottle</a> 
+                <!-- <a href="service.html" class="btn">View all Bottle</a> -->
+            </div>
+        </div>
+    </div>
+    </div>

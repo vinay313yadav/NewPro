@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<div class="page-title-wrap primary-bg">
+  <div class="page-title-content text-center">
+      <h1 class="h2">Cart-Data</h1>
+  </div>
+</div>
+               
+<div>
+    <!-- <table class="table table-striped">
+      <tr>
+        <th>No</th>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Total-Price</th>
+        <th>Finel-Price</th>
+        <th>Discount</th>
+      </tr>
+
+      <tr *ngFor="let u of table, let i = index;">
+        <td>{{i+1}}</td>
+        <td>{{u.name}}</td>
+        <td>{{u.category}}</td>
+        <td>{{u.total}}</td>
+        <td>{{u.discounttotal}}</td>
+        <td>{{u.discount}}</td>
+      </tr>
+    </table>   -->
+    <table class="table table-striped">
+      <tr>
+        <th>No</th>
+        <th>name</th>
+        <th>description</th>
+      </tr>
+
+      <tr >
+        <td>1.</td>
+        <td>product</td>
+        <td>
+          <span *ngFor="let u of table">{{u.name}}</span>
+          
+        </td>
+      </tr>
+      <tr >
+          <td>2.</td>
+          <td>total</td>
+          <td>{{table[0].total}} Rs.</td>
+        </tr>
+        <tr >
+            <td>3.</td>
+            <td>final payment</td>
+            <td>{{table[0].discounttotal}} Rs.</td>
+          </tr>
+          
+    </table>  
+    <hr>
+    
+    <div>
+        <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="onallsubmit()" >submit</button>
+    </div>
+  </div>

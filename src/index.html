@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>NewPro</title>
   <base href="/">
-
+  <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -14,49 +14,45 @@
 
   
 
-   <link rel="stylesheet" href="./styles.css">
+   <link rel="stylesheet" src="./src/styles.css">
 
-   <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+   <link rel="stylesheet" src="./src/assets/css/bootstrap.min.css">
 
-   <link rel="stylesheet" href="./src/assets/css/font-awesome.min.css">
+   <link rel="stylesheet" src="./src/assets/css/font-awesome.min.css">
 
-   <link rel="stylesheet" href="./src/assets/css/style.css">
+   <link rel="stylesheet" src="./src/assets/css/style.css">
 
-   <link rel="stylesheet" href="./src/assets/css/responsive.css">
+   <link rel="stylesheet" src="./src/assets/css/responsive.css">
 
-   <link rel="stylesheet" href="./src/assets/css/custom.css">
+   <link rel="stylesheet" src="./src/assets/css/custom.css">
 
-   <link rel="stylesheet" href="./src/assets/plugins/owl-carousel/owl.carousel.min.css">
+   <link rel="stylesheet" src="./src/assets/plugins/owl-carousel/owl.carousel.min.css">
 
-   <link rel="stylesheet" href="./src/assets/plugins/camera/camera.min.css">
+   <link rel="stylesheet" src="./src/assets/plugins/camera/camera.min.css">
  
-   <link rel="stylesheet" href="./src/assets/plugins/Magnific-Popup/magnific-popup.css">
+   <link rel="stylesheet" src="./src/assets/plugins/Magnific-Popup/magnific-popup.css">
 
+   <link rel="stylesheet" href="css/animate.css">
   </head>
-
-
-
-<!-- 
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/plugins/owl-carousel/owl.carousel.min.css">
-  <link rel="stylesheet" href="assets/plugins/camera/camera.min.css">
-  <link rel="stylesheet" href="assets/plugins/Magnific-Popup/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
-  <link rel="stylesheet" href="assets/css/custom.css"> -->
-
 
 
   <body>
     <app-root></app-root>
 
-  <script src="assets/js/wow.min.js"></script>
    <script>
    new WOW().init();
    </script>
 
-
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+  
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+    </script>
+<script src="./src/assets/js/wow.min.js"></script>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
     
 
@@ -92,25 +88,15 @@
 <script src="./src/assets/js/easing.js"></script>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>
-
-
 <script src="./src/assets/js/scripts.js"></script>
 
 
-<script src="assets/js/custom.js"></script>
-
-<script>
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
-    output.innerHTML = slider.value;
-  
-    slider.oninput = function() {
-      output.innerHTML = this.value;
-    }
-    </script>
+<script src="./src/assets/js/custom.js"></script>
 
 
+<script src="js/wow.min.js"></script>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 </body>
 </html>

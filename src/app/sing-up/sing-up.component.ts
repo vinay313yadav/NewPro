@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Myservice } from '../my.service'
-import { AuthGuard } from '../auth.guard';
 import { result } from './user';
 //import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { template } from '@angular/core/src/render3';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { AlertsService } from 'angular-alert-module';
 
 
 @Component({
@@ -32,9 +33,10 @@ export class SingUpComponent implements OnInit {
   
   constructor(
    private myServices : Myservice,
-   private authguards : AuthGuard,
+ 
    private route: ActivatedRoute,
    private router: Router,
+ 
   
    
   ) { }
@@ -45,7 +47,7 @@ export class SingUpComponent implements OnInit {
   
   ngOnInit() {
 
-
+ 
 
   }
 
@@ -83,6 +85,8 @@ this.myServices.Singupservice(this.userModel)
   },
   error => {
     console.log("Error in recieving data"); 
+    alert('Firsty Submit this form')
+ 
   }
 );
 

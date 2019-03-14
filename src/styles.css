@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+
 
 
 
@@ -453,6 +453,9 @@
     }
     .banner-delivery-form form {
         padding: 25px 25px 40px;
+    }
+    .banner-form{
+        background-color: #002197;
     }
    .banner-delivery-form {
         margin-top: 140px;
@@ -1690,6 +1693,8 @@
       box-shadow: none;
       position: fixed;
       z-index: 999;
+      background-color:#fff;
+      height: 100px;
       width: 100%;
       top: 0;
       left: 0;
@@ -1719,8 +1724,22 @@
       border: 0;
       list-style: none;
       line-height: 1;
-      display: block;
+      display: inline-block;
       position: relative;
+  }
+  .margin-left{
+      margin-left: 15%;
+  }
+  .quality{
+      background-image: url("assets/img/qulity.png");
+  }
+  .hero_slider{
+    background-image: url("assets/img/banner/h3-banner2.jpg");
+    height:120%;
+  }
+  .hero_slider1{
+    background-image: url("assets/img/banner/h3-banner1.jpg");
+    height:120%;
   }
   .header-menu #menu-button {
       display: none;

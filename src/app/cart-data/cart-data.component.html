@@ -1,10 +1,24 @@
 
-   <!-- <div class="contact-form contact-page-form parsley-validate">
+
+<app-header></app-header>
+
+
+
+<div class="page-title-wrap primary-bg">
+              <div class="page-title-content text-center">
+                  <h1 class="h2">Cart-Data</h1>
+              </div>
+</div>
+
+               
+ <div>
+
 <div class="container-fluid" >
   <form class="newForm" #newForm="ngForm" (ngSubmit)= "onSubmit()"  >
   
-          <div class="col-md-6">        
+          <div class="col-md-4">        
                   <div class="form-group">
+                    <label>Check Your PromoCode here:--</label>
                     <input type="text" required #promocode="ngModel" class="form-control" name="promocode" placeholder="promocode" [(ngModel)]="userModel.promocode">
                   </div>
                  </div>
@@ -14,9 +28,10 @@
 </div>
 </form>
 </div>
-</div> -->
 
-<div>
+<hr style="height:6px">
+
+
   <table class="table table-striped">
     <tr>
       <th>No</th>
@@ -27,8 +42,10 @@
       <th>Discount in %</th>
       <th>Quentity</th>
      
-      
-      <th>Role</th> <th colspan="2">Actions</th>
+
+      <th>Role</th> <th>Update</th>
+       <th>Actions</th>
+     
     </tr>
 
 
@@ -37,32 +54,39 @@
       <td>{{i+1}}</td>
       <td>
           <img src="https://sheltered-woodland-33544.herokuapp.com/product_image/{{u.image}}" height="100px" width="100px">
+          <!-- <img src="assets/img/icons/water-gallon.svg" height="100px" width="100px"> -->
        </td>
       <td>{{u.name}}</td>
       <td>{{u.price}}</td>
       <td>{{u.category}}</td>
       <td>{{u.discount}}</td>
-      <div>{{u.Quentity}}</div>
-      
+      <td>{{u.Quentity}}</td>
+  
       <td>
-        <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="addItem(u, '+')" ><i class="fa fa-plus-square" aria-hidden="true"></i></button>
-
         <button type="button" style="color: whitesmoke;" class="btn btn-info" (click)="addItem(u, '-')" ><i class="fa fa-minus-square" aria-hidden="true"></i></button>
+
+        <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="addItem(u, '+')" ><i class="fa fa-plus-square" aria-hidden="true"></i></button>
       </td>
       
-      <td>
-          <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="onclear(u._id)" >Clear</button>
-        </td>
+        <td>
+            <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="onupdate(u)" >Update</button>
+          </td>
+
+          <td>
+              <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="onclear(u)" >Clear</button>
+            </td>
     </tr>
    
   </table>
-  <h3>total amount: Rs.{{table[0].total}} </h3>
-      
+  <hr>
+  <h6>total amount: Rs.{{table[0].total}} </h6>
+  <h6>Total Amount With Discount: Rs.{{table[0].discounttotal}}</h6>
+ <hr>
   <div>
-      <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="onEditUser(u._id)" >submit</button>
-  </div>
+    <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="onallclear()" >Clear_all_card</button>
+</div>
 
-
-
-  
+<div>
+  <a type="button"  style="color: whitesmoke;" class="btn btn-success" routerLink="/discrip">Sub-mit</a>
+</div>
 </div>

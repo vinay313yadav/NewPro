@@ -1,42 +1,9 @@
-/*---------------------------------------------
-Template name:  mineralo
-Version:        1.0
-Author:         layerdrops
-Author Email:   layerdrops@gmail.com
 
-NOTE:
-------
-Please DO NOT EDIT THIS JS, you may need to use "custom.js" file for writing your custom js.
-We may release future updates so it will overwrite this file. it's better and safer to use "custom.js".
-
-[Table of Content]
-
-01: Main menu
-02: Background image
-03: Parsley form validation
-04: Back to top button
-05: Changing svg color
-06: Ajax Contact Form
- 07: Preloader
-08: Content animation
-09: counter up
-10: Parallax
-11: Google map
-12: testimonial carousel
-13: partner carousel
-14: banner carouser 3
-15: testimonial carousel2
-16: video popup
-
-
-
-----------------------------------------------*/
 
     (function($) {
         "use strict";
 
-            /* 01: Main menu
-            ==============================================*/
+      
 
             $('.header-menu a[href="#"]').on('click', function(event) {
                 event.preventDefault();
@@ -57,8 +24,6 @@ We may release future updates so it will overwrite this file. it's better and sa
                     $('.main-header').addClass('sticky fadeInDown')        
                 });
 
-            /* 02: Background image
-            ==============================================*/
 
             var bgImg = $('[data-bg-img]');
 

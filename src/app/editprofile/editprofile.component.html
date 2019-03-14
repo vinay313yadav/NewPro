@@ -2,18 +2,85 @@
 <app-header></app-header>
 <html lang="en">
 <body>
-    <div class="page-title-wrap primary-bg" style="height:50px;">
-        <div class="container">
-            <div class="col">
-                   
-                    <div class="page-title-content text-center">
-                        <h1 class="h2">Edit-Profile</h1>
+
+    <div class="banner_area1 clearfix ankit_bcg">
+        <div class="slider_overlay_area slider_height">
+            <div class="container slider_height">
+                <div class="row slider_height">
+                    <div class="col-md-5 offset-md-7 slider_height">
+                        <div class="banner-delivery-form">
+                            <div class="form-header text-center">
+                                <h2>Edit-Your-Profile</h2>
+                            </div>
+                            <div class="container-fluid" >
+                                <form class="newForm" #newForm="ngForm"  (ngSubmit)= "onSubmit()"  >
+                                    <div class="row banner-form">
+
+                                        <div class="col-md-12">        
+                                            <div class="form-group">
+                                              <input type="text" required #name="ngModel"   class="form-control" name="name"  [(ngModel)]="userModel.name" >
+                                            </div>
+                                           </div>
+
+                                                 <div class="col-md-12">        
+                                                    <div class="form-group">
+                                                      <input type="email" required #email="ngModel" class="form-control" name="email"  [(ngModel)]="userModel.email">
+                                                    </div>
+                                                   </div>
+
+                                                   <div class="col-md-12">        
+                                                    <div class="form-group">
+                                                      <input type="text" required #city="ngModel" class="form-control" name="city"  [(ngModel)]="userModel.city">
+                                                    </div>
+                                                   </div>
+
+                                                   <div class="col-md-12">        
+                                                    <div class="form-group">
+                                                      <input type="text" required #address="ngModel" class="form-control" name="address"   [(ngModel)]="userModel.address">
+                                                    </div>
+                                                   </div>
+                                          
+                                                   <div class="col-md-12">        
+                                                    <div class="form-group">
+                                                      <input type="number"   required #mobile="ngModel" class="form-control" name="mobile"  [(ngModel)]="userModel.mobile" value="Norway" readonly>
+                                                    </div>
+                                                   </div>
+
+
+
+                        <div class="submite-btn text-center">
+                        <button type="submit"  class="btn btn-primary center-block" >submit</button>
+                        </div>
+                        
                     </div>
-                    
+                        </form>
+                      </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="camera_wrap " id="banner_slider1">
+            <div class="hero_slider" data-src="./src/assets/img/banner/h3-banner1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                        
+                            <div class="banner-text-wrap">
+                                <span class="schoolbell fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .0s;-webkit-animation-delay: .0s;">Enjoy great tasting bottled water</span>
+                                <h1 class="text-white fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .2s;-webkit-animation-delay: .3s;">We deliver the<br> best pure mineral water</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <section class="pt-90 pb-120">
+
+
+
+    <!-- <section class="pt-90 pb-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
@@ -52,13 +119,13 @@
                                                       <input type="number"   required #mobile="ngModel" class="form-control" name="mobile"  [(ngModel)]="userModel.mobile" value="Norway" readonly>
                                                     </div>
                                                    </div>
-                                                   <!-- <div class="col-md-6">        
+                                                    <div class="col-md-6">        
                                                     <div class="form-group">
                                                             <app-inline-edit #mobile="ngModel" class="form-control" name="mobile" [(ngModel)]="userModel.mobile"  [required]="true" type="text">
                                                                 </app-inline-edit>
                                                     </div>
                                                    </div> -->
-                            <div class="submite-btn text-center">
+                            <!-- <div class="submite-btn text-center">
                               <button type="submit"  class="btn btn-primary center-block" >submit</button>
                             </div>
         
@@ -68,7 +135,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>  -->
+
+
     <footer class="footer secondery-bg">
         <div class="footer-top pt-110 pb-70">
             <div class="container">

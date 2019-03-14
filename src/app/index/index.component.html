@@ -2,7 +2,7 @@
 <app-header></app-header>
 
 <body>
-        <div class="banner_area1 clearfix">
+        <div class="banner_area1 clearfix ankit_bcg">
             <div class="slider_overlay_area slider_height">
                 <div class="container slider_height">
                     <div class="row slider_height">
@@ -14,39 +14,41 @@
 
                                 <div class="container-fluid" >
                                     <form class="newForm" #newForm="ngForm"  (ngSubmit)= "onSubmit()"  >
-                                        <div class="row">
-                                            <div class="col-lg-6">       
+                                        <div class="row banner-form">
+                                            <div class="col-lg-12">       
                                                     <div class="form-group">
                                                       <input type="text" required #name="ngModel"   class="form-control" name="name" placeholder="Name" [(ngModel)]="userModel.name" >
                                                     </div>
                                                    </div>
-                                                   <div class="col-lg-6">      
+                                                   <div class="col-lg-12">      
                                                     <div class="form-group">
                                                       <input type="email" required #email="ngModel" class="form-control" name="email" placeholder="Email" [(ngModel)]="userModel.email">
                                                     </div>
                                                    </div>
 
-                                                   <div class="col-lg-6">    
+                                                   <div class="col-lg-12">    
                                                     <div class="form-group">
                                                       <input type="text" required #number="ngModel" class="form-control" name="mobile" placeholder="Mobile" [(ngModel)]="userModel.mobile">
                                                     </div>
                                                    </div>
-                                                   <div class="col-lg-6">     
+                                                   <div class="col-lg-12">     
                                                     <div class="form-group">
                                                       <input type="text" required #address="ngModel" class="form-control" name="address" placeholder="Address"  [(ngModel)]="userModel.address">
                                                     </div>
                                                    </div>
 
 
-                                                   <div class="col-lg-6">     
+                                                   <div class="col-lg-12">     
                                                     <div class="form-group">
                                                       <input type="number" required #number="ngModel" class="form-control" name="number" placeholder="Number Of Bottles"  [(ngModel)]="userModel.number">
                                                     </div>
                                                    </div>
-
+                            
                             <div class="submite-btn text-center">
-                              <button type="submit"  class="btn btn-primary center-block" >submit</button>
+                              <button type="submit"  class="btn btn-warning btn-xs" >submit</button>
                             </div>
+
+                            
                         </div>
                             </form>
                           </div>
@@ -55,10 +57,6 @@
                     </div>
                 </div>
             </div>
-    
-    
-    
-    
     
             <div class="camera_wrap " id="banner_slider1">
                 <div class="hero_slider" data-src="./src/assets/img/banner/h3-banner1.jpg">
@@ -69,40 +67,24 @@
                                 <div class="banner-text-wrap">
                                     <span class="schoolbell fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .0s;-webkit-animation-delay: .0s;">Enjoy great tasting bottled water</span>
                                     <h1 class="text-white fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .2s;-webkit-animation-delay: .3s;">We deliver the<br> best pure mineral water</h1>
-                                    <a href="#" class="btn fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .4s;-webkit-animation-delay: .4s;">Order Now</a>
-                                </div><!--/.End of  banner text wrap -->
-                            </div><!-- /.col -->
-                        </div><!-- /.row -->
-                    </div><!--/.container-->
-                </div><!--/.Slider Item-->
-                <div class="hero_slider" data-src="assets/img/banner/h3-banner2.jpg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <!-- banner text wrap -->
-                                <div class="banner-text-wrap">
-                                    <span class="schoolbell fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .0s;-webkit-animation-delay: .0s;">Enjoy great tasting bottled water</span>
-                                    <h1 class="text-white fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .2s;-webkit-animation-delay: .2s;">We deliver the<br> best pure mineral water</h1>
-                                    <a href="#" class="btn fadeInUp" style="animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; animation-delay: .4s;-webkit-animation-delay: .4s;">Order Now</a>
-                                </div><!--/.End of  banner text wrap -->
-                            </div><!-- /.col -->
-                        </div><!-- /.row -->
-                    </div><!--/.container-->
-                </div><!-- /.hero area -->
-            </div><!-- /.camera wrap -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
     
-            
-        </div><!--/.Banner Area-->
-    
-    
-        <!-- feature area -->
+ 
         <section class="pt-120 pb-80 top-shape">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <!-- section title -->
                         <div class="section-title text-center type3">
-                            <span class="schoolbell">Wellcome To ShudhH20</span>
+                            <span class="schoolbell">Welcome To ShudhH20</span>
                             <h2>Most Trusted Company</h2>
                             <p>ShudhH20 Water Industries is pleased to introduce itself as a new entrant in the market for supply of revitalizing, refreshing, pure clean & healthy mineralized water</p>
                         </div><!-- End of section title -->
@@ -222,37 +204,88 @@
                     </div>
                 </div>
 
+                
 
 
 
 
-                <div class="row justify-content-center" >
-                    <div class="col-md-6 col-lg-4" >
+
+
+                <div >
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4" *ngFor="let u of table">
                       <div class="table">
-                        <div class="single-bottle-inner text-center" *ngFor="let u of table">
+                        <div class="single-bottle-inner text-center">
+                            
                             <div class="bottle-image">
                                 <img src="assets/img/icons/water-gallon.svg" alt="" class="svg">
                             </div>
                             <div class="single-bottle-text">
-                                <h4>{{u.name}}</h4>
-                                <h5>{{u.price}}</h5>
-                                <h5>{{u.category}}</h5>
-                                <h5>{{u.discount}}</h5>
+                                <h6>Product:{{u.name}}</h6>
+                                <h6>price:{{u.price}}</h6>
+                                <h6>category:{{u.category}}</h6>
+                                <h6>discount:{{u.discount}}</h6>
                                 <div>
                                  <button type="button"  class="btn btn-danger" (click)="onAddCart(u)" >Add_Cart</button>
                                 </div>
                             </div>
+                        
                         </div>
                     </div>
                     </div>
-                 
-                  
+                    <!-- <div class="col-md-6 col-lg-4" >
+                            <div class="table">
+                              <div class="single-bottle-inner text-center">
+                                  
+                                  <div class="bottle-image">
+                                      <img src="assets/img/icons/water-gallon.svg" alt="" class="svg">
+                                  </div>
+                                  <div class="single-bottle-text">
+                                      <h4>{{u.name}}</h4>
+                                      <h5>{{u.price}}</h5>
+                                      <h5>{{u.category}}</h5>
+                                      <h5>{{u.discount}}</h5>
+                                      <div>
+                                       <button type="button"  class="btn btn-danger" (click)="onAddCart(u)" >Add_Cart</button>
+                                      </div>
+                                  </div>
+                              
+                              </div>
+                          </div>
+                          </div> -->
+                          <!-- <div class="col-md-6 col-lg-4" >
+                                <div class="table">
+                                  <div class="single-bottle-inner text-center">
+                                      
+                                      <div class="bottle-image">
+                                          <img src="assets/img/icons/water-gallon.svg" alt="" class="svg">
+                                      </div>
+                                      <div class="single-bottle-text">
+                                          <h4>{{u.name}}</h4>
+                                          <h5>{{u.price}}</h5>
+                                          <h5>{{u.category}}</h5>
+                                          <h5>{{u.discount}}</h5>
+                                          <div>
+                                           <button type="button"  class="btn btn-danger" (click)="onAddCart(u)" >Add_Cart</button>
+                                          </div>
+                                      </div>
+                                  
+                                  </div>
+                              </div>
+                              </div> -->
+
+                              <!-- Bottom Button Section-->
                     <div class="col-12">
                         <div class="deliver-btn text-center">
-                            <a href="service.html" class="btn">View all Bottle</a>
+                                <a type="button" class="btn btn-warning"  routerLink="/service">View all Bottle</a> 
+                            <!-- <a href="service.html" class="btn">View all Bottle</a> -->
                         </div>
                     </div>
                 </div>
+                </div>
+
+
+
 
 
 

@@ -25,8 +25,9 @@ otp:any;
   {
     this.myServices.ChangePass(this.userModel)
     .subscribe(res=>{
+      alert('Your Password is Succsefully Changed ')
       this.otp = res;
-      this.router.navigate(['/index']);
+      this.router.navigate(['']);
       console.log(res)
     })
   }

@@ -1,21 +1,70 @@
 
 
-<html lang="en">
-  <body>
+
     
-      <div class="page-title-wrap primary-bg" style="height:50px;">
-          <div class="container">
-              <div class="col">
-                    
-                      <div class="page-title-content text-center">
-                          <h1 class="h2">Enter Your OTP</h1>
+
+
+<div class="banner_area1 clearfix ankit_bcg">
+        <div class="slider_overlay_area slider_height">
+            <div class="container slider_height">
+                <div class="row slider_height">
+                    <div class="col-md-5 offset-md-7 slider_height">
+                        <div class="banner-delivery-form">
+                            <div class="form-header text-center">
+                                <h2>OTP</h2>
+                            </div>
+    
+                            <div class="container-fluid" >
+                                <form class="newForm" #newForm="ngForm"  (ngSubmit)= "onSubmit()"  >
+                                    <div class="row banner-form">
+                                            <div class="col-lg-12">        
+                                                    <div class="form-group">
+                                                        <label>Enter Your Valide OTP</label>
+                                                        <input type="number" #otp="ngModel"  class="form-control" name="otp" placeholder="OTP" [(ngModel)]="userModel.otp">
+                                                    </div>
+                                                   </div>
+                        
+                        <div class="submite-btn text-center">
+                        <button type="submit"  class="btn btn-primary center-block" >submit</button>
+                        <button type="button" style="color: whitesmoke;" class="btn btn-danger" (click)="ngSubmit()" >Resend_OTP</button>
+                        </div>
+
+                    </div>
+                        </form>
+                        <!-- <form class="newForm" #newForm="ngForm" (ngSubmit)= "ngSubmit()"  >
+                           
+                                    <button type="submit"  class="btn btn-primary center-block">Resend_OTP</button>
+                                  
+                            </form> -->
+
+
                       </div>
-                      
-                  </div>
-          </div>
-      </div>
+              
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="camera_wrap " id="banner_slider1">
+            <div class="hero_slider" data-src="./src/assets/img/banner/h3-banner1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    
       
-      <section class="pt-90 pb-120">
+      <!-- <section class="pt-90 pb-120">
           <div class="container">
               <div class="row">
                   <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
@@ -50,69 +99,10 @@
 </div>
 </div>
 </div>
-</section>
+</section> -->
 
 
 
-<footer class="footer secondery-bg">
-<div class="footer-top pt-110 pb-70">
-<div class="container">
-<div class="row">
-    <div class="col-md-4">
-      
-        <div class="footer-widget">
-            <div class="widget-title">
-                <h3>Address</h3>
-            </div>
-            <p>Sample Address, Indore</p>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-      
-        <div class="footer-widget text-center">
-            <div class="widget-title">
-                <h3>Follow</h3>
-            </div>
-            <div class="footer-social-area">
-                <ul class="social-list mb--0 list-unstyled">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        
-        <div class="footer-widget text-right">
-            <div class="widget-title">
-                <h3>Contact</h3>
-            </div>
-            <div class="footer-contact-info">
-                <a href="">+91-98765 43210</a>
-                <a href="">info@bookthewater.com</a>
-            </div>
-        </div>>
-    </div>
-</div>
-</div>
-</div>
-<div class="footer-bottom text-center">
-<div class="footer-bottom-text">
-<p>© Copyright 2019 by <a href="#">BooktheWater.com</a></p>
-</div>
-</div>
-</footer>
 
 
-
-<div class="back-to-top">
-<a href="#"><i class="fa fa-chevron-up"></i></a>
-</div>
-</body>
-
-</html>
 

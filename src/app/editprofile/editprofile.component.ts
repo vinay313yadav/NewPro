@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Myservice } from '../my.service';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { proedit} from './editpro'
+import { AuthService } from '../auth.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-editprofile',
@@ -14,7 +16,7 @@ export class EditprofileComponent implements OnInit {
   res : proedit [] = [];
   proedit: any;
 
-  constructor(private myservices: Myservice, private formBuilder: FormBuilder) { }
+  constructor(private myservices: Myservice, private formBuilder: FormBuilder, public authService: AuthService,  private router: Router) { }
 
   userModel = {name:'', email:'', city:'', address: '', mobile:'',   id:localStorage.getItem('id')}
 
@@ -44,6 +46,12 @@ export class EditprofileComponent implements OnInit {
       console.log(res)
       console.log(localStorage.getItem('id'));
     });
+  }
+
+  logout(): void {
+    console.log("Logout");
+    this.authService.logout();
+    this.router.navigate(['']);
   }
 
 }

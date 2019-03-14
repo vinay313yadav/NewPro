@@ -1,66 +1,34 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, CanActivateChild, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-    constructor(private router: Router) { }
 
-    
+    constructor(private router : Router){}
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-      
-        const id = localStorage.getItem('id');
-        console.log(id);
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        let url: string = state.url;  
+        return this.verifyLogin(url);
+    }
 
-         const token = localStorage.getItem('token');
-
-        if (localStorage.getItem('currentUser')) {
-        
+    verifyLogin(url) : boolean{
+        if(!this.isLoggedIn()){
+            this.router.navigate(['']);
+            return false;
+        }
+        else if(this.isLoggedIn()){
             return true;
-        } 
-        // not logged in so redirect to login page with the return url
-        this.router.navigate([''], { queryParams: { returnUrl: state.url }});
-        return false;
+        }
+    }
+    public isLoggedIn(): boolean{
+        let status = false;
+        if( localStorage.getItem('isLoggedIn') == "true"){
+          status = true;
+        }
+        else{
+          status = false;
+        }
+        return status;
     }
 }
-
-
-
-
-
-
-// import { Injectable } from '@angular/core';
-// import { CanActivate, CanActivateChild, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-
-// @Injectable()
-// export class AuthGuard implements CanActivate {
-
-
-//     constructor(private router : Router){}
-
-//     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-//         let url: string = state.url;  
-//         return this.verifyLogin(url);
-//     }
-
-//     verifyLogin(url) : boolean{
-//         if(!this.isLoggedIn()){
-//             this.router.navigate(['/login']);
-//             return false;
-//         }
-//         else if(this.isLoggedIn()){
-//             return true;
-//         }
-//     }
-//     public isLoggedIn(): boolean{
-//         let status = false;
-//         if( localStorage.getItem('isLoggedIn') == "true"){
-//           status = true;
-//         }
-//         else{
-//           status = false;
-//         }
-//         return status;
-//     }
-// }

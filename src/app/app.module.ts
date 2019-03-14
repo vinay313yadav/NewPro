@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {HttpModule } from '@angular/http'
  import { Myservice } from './my.service';
  import { StorageServiceModule} from 'angular-webstorage-service';
-
+ import { WindowRef } from './discription/WindowRef';
  import { AuthGuard } from './auth.guard';
 
 
@@ -26,23 +26,48 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { CartDataComponent } from './cart-data/cart-data.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { PaaswordChangeComponent } from './paasword-change/paasword-change.component';
+import { FormcartComponent } from './formcart/formcart.component';
+
+import { AlertsModule } from 'angular-alert-module';
+import { DiscriptionComponent } from './discription/discription.component';
+
 
 
 const appRoutes: Routes = [
-  { path: 'index', component: IndexComponent },
-  { path: 'service', component: ServiceComponent  },
-  { path: 'servicedetails', component: ServicedetailsComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'index', component: IndexComponent, canActivate: [AuthGuard]  },
+  { path: 'service', component: ServiceComponent, canActivate: [AuthGuard]   },
+  { path: 'servicedetails', component: ServicedetailsComponent, canActivate: [AuthGuard]  },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard]  },
   // { path: 'header', component: HeaderComponent,  canActivate: [AuthGuard] },
-  {path: 'Contact', component: ContactComponent},
+  {path: 'Contact', component: ContactComponent, canActivate: [AuthGuard] },
   {path: '', component: LoginComponent},
   {path: 'singup', component: SingUpComponent },
-  { path: 'otp', component: OTPComponent },
-  { path: 'editProfile', component: EditprofileComponent},
-  { path: 'cartdata', component: CartDataComponent},
+  { path: 'otp', component: OTPComponent},
+  { path: 'editProfile', component: EditprofileComponent, canActivate: [AuthGuard] },
+  { path: 'cartdata', component: CartDataComponent, canActivate: [AuthGuard] },
   { path: 'forgotPass', component: ForgetPasswordComponent},
-  { path: 'changePass', component: PaaswordChangeComponent}
+  { path: 'changePass', component: PaaswordChangeComponent},
+  { path: 'discrip', component: DiscriptionComponent, canActivate: [AuthGuard] },
+  { path: 'fromcat', component: FormcartComponent, canActivate: [AuthGuard] }
 ];
+
+// const appRoutes: Routes = [
+//   { path: 'index', component: IndexComponent },
+//   { path: 'service', component: ServiceComponent  },
+//   { path: 'servicedetails', component: ServicedetailsComponent  },
+//   { path: 'about', component: AboutComponent },
+//   // { path: 'header', component: HeaderComponent,  canActivate: [AuthGuard] },
+//   {path: 'Contact', component: ContactComponent },
+//   {path: '', component: LoginComponent},
+//   {path: 'singup', component: SingUpComponent },
+//   { path: 'otp', component: OTPComponent },
+//   { path: 'editProfile', component: EditprofileComponent },
+//   { path: 'cartdata', component: CartDataComponent },
+//   { path: 'forgotPass', component: ForgetPasswordComponent},
+//   { path: 'changePass', component: PaaswordChangeComponent},
+//   { path: 'discrip', component: DiscriptionComponent},
+//   { path: 'fromcat', component: FormcartComponent }
+// ];
 
 @NgModule({
   declarations: [
@@ -60,6 +85,8 @@ const appRoutes: Routes = [
     CartDataComponent,
     ForgetPasswordComponent,
     PaaswordChangeComponent,
+    FormcartComponent,
+    DiscriptionComponent,
   
   ],
   imports: [
@@ -70,10 +97,11 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     StorageServiceModule,
-    HttpModule
+    HttpModule,
+    AlertsModule.forRoot()
   
   ],
-  providers: [ AuthGuard, LoginComponent, SingUpComponent , Myservice],
+  providers: [AuthGuard, LoginComponent, SingUpComponent , Myservice, WindowRef, WindowRef  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

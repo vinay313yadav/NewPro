@@ -6,6 +6,7 @@ import {HttpClient, HttpHeaders,  HttpRequest} from '@angular/common/http';
 
 
 
+
 @Injectable({
     providedIn: 'root'
   })
@@ -104,7 +105,7 @@ console.log(localStorage.getItem('token'));
 // }
 
 
-CartService(id)
+CartService()
 {
   const idd = localStorage.getItem('id');
   return this.http.get('http://sheltered-woodland-33544.herokuapp.com/subscription/'+idd)
@@ -139,7 +140,6 @@ ChangePass(user){
 
 cartAddproduct(users)
 {
-
   const iid = localStorage.getItem('id')
   console.log(iid)
   const body = JSON.stringify(users)
@@ -160,6 +160,33 @@ cartAddproduct(users)
 
 
 
+
+updatecart(users)
+{
+  const iid = localStorage.getItem('id')
+  console.log(iid)
+  const body = JSON.stringify(users)
+  console.log('-----------------------',body, '++++++++++++++++++++++++++++++++++++')
+  const fb  = new FormData();
+  fb.append('productid',users.productid)
+  fb.append('discounttotal', users.discounttotal)
+  // localStorage.setItem('dis', users.discounttotal)
+  fb.append('category',users.category)
+  fb.append('discount',users.discount)
+  fb.append('image',users.image)
+  fb.append('name',users.name)
+  fb.append('price',users.price)
+  fb.append('userid',iid)
+  fb.append('Quentity', users.Quentity)
+  fb.append('total', users.total)
+  console.log('++++___------',users.productid)
+  
+   return this.http.post('http://sheltered-woodland-33544.herokuapp.com/subscription', fb)
+}
+
+
+
+
  cartViewproduct()
  {
    return this.http.get('http://sheltered-woodland-33544.herokuapp.com/subscription/'+localStorage.getItem('id'))
@@ -168,21 +195,26 @@ cartAddproduct(users)
  cartProductclearrow(user)
  {
    const body = JSON.stringify(user)
+   const iid = localStorage.getItem('id')
    console.log(body)
    return this.http.post('http://sheltered-woodland-33544.herokuapp.com/subscription/clear', user)
  }
 
- cartclear(user)
+ cartclear()
  {
-   const body = JSON.stringify(user)
-   console.log(body)
-   return this.http.post('http://sheltered-woodland-33544.herokuapp.com/subscription/clearcart', user)
+  const fb  = new FormData();
+  fb.append('userid',localStorage.getItem('id'))
+    return this.http.post('http://sheltered-woodland-33544.herokuapp.com/subscription/clearcart', fb)
  }
 
  cartviewpromocode(user)
  {
-   return this.http.post('http://sheltered-woodland-33544.herokuapp.com/subscription/viewpromo',user)
+   return this.http.post('http://sheltered-woodland-33544.herokuapp.com/viewpromo/findpromo',user)
  }
+
+
+
+
    
 }
 

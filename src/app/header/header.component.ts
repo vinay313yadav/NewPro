@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Myservice } from '../my.service';
 import {Router} from "@angular/router";
 import { profile } from './headdd';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
 res : profile [] = [];
 profile: any;
 
-  constructor( private myservices : Myservice, private router: Router) { }
+  constructor( private myservices : Myservice, private router: Router, public authService: AuthService) { }
 
   userModel= {id:localStorage.getItem('id'), token:localStorage.getItem('token') }
 
@@ -51,6 +52,12 @@ profile: any;
       this.router.navigate(['cartdata']);
       console.log(res)
     })
+  }
+
+  logout(): void {
+    console.log("Logout");
+    this.authService.logout();
+    this.router.navigate(['']);
   }
 
 }

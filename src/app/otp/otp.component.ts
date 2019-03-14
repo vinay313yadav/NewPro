@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Myservice } from '../my.service'
  import { Router, ActivatedRoute } from '@angular/router';
+ import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-otp',
@@ -15,6 +16,7 @@ export class OTPComponent implements OnInit {
    private myServices : Myservice,
    private route: ActivatedRoute,
    private router: Router,
+   public authService: AuthService
   ) { }
 
 
@@ -29,9 +31,8 @@ export class OTPComponent implements OnInit {
     .subscribe(
       data => {
      this.otp = data
-    //  if(this.otp=="otpsuccess")
-    //  {
-      this.router.navigate(['/index']); 
+       alert('Your OTP is Success pls Log-in ')
+      this.router.navigate(['']); 
       localStorage.getItem('id');
       localStorage.getItem('token')
      // console.log(localStorage.getItem('id'));
@@ -57,6 +58,12 @@ export class OTPComponent implements OnInit {
           console.log(error);
         }
       );
+    }
+
+    logout(): void {
+      console.log("Logout");
+      this.authService.logout();
+      this.router.navigate(['']);
     }
 
 }
