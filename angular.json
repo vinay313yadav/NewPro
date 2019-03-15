@@ -20,40 +20,19 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-
-
-              "src/assets/css/bootstrap.min.css",
-              "src/assets/css/font-awesome.min.css",
-              "src/assets/css/style.css",
-             "src/assets/css/responsive.css",
-             "src/assets/css/custom.css",
-             "src/assets/plugins/owl-carousel/owl.carousel.min.css",
-             "src/assets/plugins/camera/camera.min.css",
-             "src/assets/plugins/Magnific-Popup/magnific-popup.css",
-
-             "src/assets/js/wow.min.js"
+              "src/assets"
             ],
 
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/font-awesome/css/font-awesome.min.css",
-              "node_modules/wowjs/css/libs/animate.css",
-         
-              "src/assets/plugins/owl-carousel/owl.carousel.min.css",
-              "src/assets/plugins/Magnific-Popup/magnific-popup.css",
-              "src/assets/css/responsive.css"
+              "node_modules/font-awesome/css/font-awesome.min.css"
+              
             ],
             "scripts": [
-               "node_modules/jquery/dist/jquery.min.js" ,
-               "node_modules/popper.js/dist/umd/popper.min.js" ,
-               "node_modules/bootstrap/dist/js/bootstrap.min.js" ,
-               "node_modules/bootstrap/dist/js/bootstrap.bundle.js" ,
-               "node_modules/wowjs/dist/wow.js",
-               "node_modules/hammerjs/hammer.js",
-             
-
+               "./node_modules/jquery/dist/jquery.min.js" ,
+               "./node_modules/popper.js/dist/umd/popper.min.js" ,
+               "./node_modules/bootstrap/dist/js/bootstrap.min.js" 
             ],
             "es5BrowserSupport": true
           },
